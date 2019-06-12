@@ -65,7 +65,7 @@
   position: absolute;
   color: #47c147;
   top: 50%;
-  left: -33px;
+  left: -37px;
   transform: translateY(-51%);
   z-index: 2;
 }
@@ -73,7 +73,7 @@
 .tasks__item::before {
   content: '';
   position: absolute;
-  left: -37px;
+  left: -41px;
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
