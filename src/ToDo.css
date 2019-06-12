@@ -1,0 +1,261 @@
+.app {
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.app__header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.app__title {
+  margin: 0;
+}
+
+.app__body {
+  display: flex;
+  min-height: calc(100% - 65px);
+}
+
+.app__timeline,
+.app__form {
+  flex: 1;
+}
+
+.app__timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  background: #4f5a6e;
+  padding: 20px;
+}
+
+.app__timeline::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  left: 79px;
+  background: #fff;
+}
+
+.tasks__item {
+  position: relative;
+  margin-left: 20%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  transition: 0.1s ease-out;
+}
+
+.tasks__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.tasks__item.is-finished {
+  background: #acdeac;
+}
+
+.tasks__item.is-finished::after {
+  content: '✔';
+  position: absolute;
+  color: #47c147;
+  top: 50%;
+  left: -33px;
+  transform: translateY(-51%);
+  z-index: 2;
+}
+
+.tasks__item::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.tasks__time {
+  position: absolute;
+  left: -92px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  line-height: 1;
+}
+
+.tasks__item:hover .tasks__buttons {
+  max-height: 100px;
+  opacity: 1;
+}
+
+.tasks__buttons {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  opacity: 0.5;
+}
+
+.tasks__delete {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #bf0000;
+}
+
+.tasks__finished {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: green;
+  margin-left: 20px;
+}
+
+.tasks__edit {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: blue;
+  margin-left: 20px;
+}
+
+.tasks__delete,
+.tasks__finished,
+.tasks__edit {
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+.tasks__delete:focus,
+.tasks__finished:focus,
+.tasks__edit:focus {
+  outline: 0;
+}
+
+.tasks__delete:hover,
+.tasks__finished:hover,
+.tasks__edit:hover {
+  transform: translateY(-1px);
+}
+
+.tasks__empty {
+  margin-left: 83px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.app__form {
+  padding: 0 0 0 40px;
+}
+
+.app__controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__label {
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.app__input {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 0;
+  background: lavender;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.app__add-button {
+  display: inline-block;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0;
+  background: #4f5a6e;
+  color: #fff;
+  padding: 8px 30px;
+}
+
+.app__statistic {
+  margin-top: 40px;
+}
+
+.app__active {
+  padding: 10px;
+  background: #dae7f5;
+}
+
+.app__done {
+  padding: 10px;
+  background: #c6d8ea;
+}
+
+.app__all {
+  padding: 10px;
+  background: #afc6e0;
+}
+
+@media (max-width: 1050px) {
+  .app__body {
+    flex-direction: column;
+    min-height: auto;
+    padding: 0 15px;
+  }
+
+  .app__timeline {
+    order: 1;
+    margin-top: 20px;
+  }
+
+  .app__timeline::after {
+    display: none;
+  }
+
+  .app__form {
+    padding: 0;
+  }
+
+  .tasks__item {
+    margin-left: 60px
+  }
+
+  .tasks__item::before {
+    display: none;
+  }
+
+  .tasks__item.is-finished::after {
+    display: none;
+  }
+
+  .tasks__time {
+    left: -60px;
+  }
+
+  .tasks__buttons {
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .modal__body {
+    width: auto;
+  }
+}
